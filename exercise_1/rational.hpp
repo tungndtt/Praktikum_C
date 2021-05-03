@@ -1,14 +1,15 @@
 #pragma once
+#include <iostream>
 
 class Rational {
 public:
     int Z, N;
     Rational();
     Rational(int counter, int denominator);
-    Rational(const Rational& r);
+    Rational(const Rational& rational);
     ~Rational();
 
-    void operator<< (const Rational& rational);
+    std::string operator<< (const Rational& rational);
     Rational operator+ (const Rational& rational);
     Rational operator- (const Rational& rational);
     Rational operator* (const Rational& rational);

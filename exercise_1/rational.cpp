@@ -23,6 +23,8 @@ int gcd(int A, int B) {
 
 // default constructor
 Rational::Rational() {
+    this->Z = 1;
+    this->N = 2;
     std::cout << "Rational " << this->Z << "/" << this->N << " created" << std::endl;
 }
 
@@ -32,9 +34,9 @@ Rational::Rational(int counter, int denominator): Z(counter), N(denominator) {
 }
 
 // copy constructor
-Rational::Rational(const Rational& r) {
-    this->Z = r.Z;
-    this->N = r.N;
+Rational::Rational(const Rational& rational) {
+    this->Z = rational.Z;
+    this->N = rational.N;
 }
 
 // destructor
@@ -43,8 +45,8 @@ Rational::~Rational(){
 }
 
 // overloading operator <<
-void Rational::operator<<(const Rational& rational){
-    std::cout << rational.Z << "/" << rational.N << std::endl;
+std::string Rational::operator<< (const Rational& rational){
+    return std::to_string(rational.Z) + "/" + std::to_string(rational.N);
 }
 
 // overloading operator +
