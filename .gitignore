@@ -1,1 +1,6 @@
 *.exe
+Makefile
+.codelite
+*.mk
+*.txt
+*/Debug
