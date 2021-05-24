@@ -8,6 +8,7 @@ typedef std::pair<int, std::string> Item;
 class Map {
 public:
     Map(const std::size_t size);
+    Map(const Map& other) = delete;
     ~Map();
 
     void insert(const std::string &key, const std::vector<Item> &order);

@@ -28,7 +28,7 @@ void printList(std::vector<Item>& list) {
 }
 
 void map_test() {
-    Map map = Map{3};
+    Map map(3);
 
     // create orders
     std::string k1 = "ab";
@@ -116,7 +116,7 @@ int main() {
     laden(dateiname, loadSpeisen);
 
     size_t mapSize = 8;
-    Map map = Map(mapSize);
+    Map map(mapSize);
     try {
         laden("speisen.csv", speisen);
     }
