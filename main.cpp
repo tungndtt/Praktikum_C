@@ -129,14 +129,17 @@ int main() {
     std::string orderKey;
     std::string exitChar = "e";
     while(true) {
+        std::cout << "#################################### OPTIONS ########################################" << std::endl;
         std::cout << "Press character to select option. Be carefuly of capslock!" << std::endl;
         std::cout << "Options: Create new order (c) | Show the order (o) | Delete order (d) | Show all (a) | End (e)" << std::endl;
         std::cin >> c;
         if(c == 'c') {
             bool orderDone = false;
             while(true) {
+                std::cout << "#################################### CREATE ORDER ########################################" << std::endl;
                 std::cout << "Enter e to exit ..." << std::endl;
-                std::cout << "Provide the order key: " << std::endl;
+                std::cout << "Provide the order key: ";
+                std::cin.ignore();
                 std::getline(std::cin, orderKey);
                 if(orderKey.length() == 0) {
                     std::cout << "Order key cannot be empty!" << std::endl;
@@ -146,10 +149,14 @@ int main() {
                     std::vector<Item> orders;
                     while(true) {
                         int orderNr;
-                        std::cout << "Please provide the order number. Enter -1 to get back, 0 to finish ordering!" << std::endl;
+                        std::cout << std::endl;
+                        std::cout << "Please provide the order number. Enter -1 to cancel, 0 to finish ordering!" << std::endl;
                         std::cout << "Order number? : ";
                         std::cin >> orderNr;
-                        if(orderNr == -1) break;
+                        if(orderNr == -1) {
+                            orders.clear();
+                            break;
+                        }
                         else if(orderNr == 0) {
                             map.insert(orderKey, orders);
                             break;
@@ -171,8 +178,10 @@ int main() {
         }
         else if(c == 'o') {
             while(true) {
+                std::cout << "##################################### SHOW ORDER #######################################" << std::endl;
                 std::cout << "Enter e to exit ..." << std::endl;
                 std::cout << "Enter order key? : ";
+                std::cin.ignore();
                 std::getline(std::cin, orderKey);
                 if(orderKey.compare(exitChar) == 0) break;
                 else {
@@ -189,8 +198,10 @@ int main() {
         }
         else if(c == 'd') {
             while(true) {
+                std::cout << "################################## DELETE ORDER #######################################" << std::endl;
                 std::cout << "Enter e to exit ..." << std::endl;
                 std::cout << "Enter order key? : ";
+                std::cin.ignore();
                 std::getline(std::cin, orderKey);
                 if(orderKey.compare(exitChar) == 0) break;
                 else {
@@ -204,6 +215,7 @@ int main() {
             }
         }
         else if(c == 'a') {
+            std::cout << "################################## SHOW ALL ########################################" << std::endl;
             std::cout << "Order number | Description | Price ..." << std::endl;
             for(Food food : speisen) {
                 std::cout << food.getBestellnummer() << ". " << food.getBezeichnung() << " # " << food.getPreis() << " Euro" << std::endl;
