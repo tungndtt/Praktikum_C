@@ -5,21 +5,7 @@
 
 const std::string dateiname = "speisen.csv";
 
-void createSpeisenKarte() {
-    std::vector<Food> saveSpeisen = {
-        Food(1, "hotdog", 5.0),
-        Food(2, "pizza", 7.5),
-        Food(3, "apple", 1.2),
-        Food(4, "orange", 1.5),
-        Food(5, "cola", 1.0),
-        Food(6, "fanta", 1.0),
-        Food(7, "pepsi", 1.0),
-        Food(8, "juice", 2.2)
-    };
-    
-    speichern(dateiname, saveSpeisen);
-}
-
+// print items
 void printList(std::vector<Item>& list) {
     for(Item item : list) {
         std::cout << item.first << ", " << item.second << "| ";
@@ -27,6 +13,7 @@ void printList(std::vector<Item>& list) {
     std::cout << std::endl;
 }
 
+// test map method
 void map_test() {
     Map map(3);
 
@@ -97,6 +84,23 @@ void map_test() {
     std::cout << "Size = " << r.size() << std::endl;
 }
 
+// create speisen karte method
+void createSpeisenKarte() {
+    std::vector<Food> saveSpeisen = {
+        Food(1, "hotdog", 5.0),
+        Food(2, "pizza", 7.5),
+        Food(3, "apple", 1.2),
+        Food(4, "orange", 1.5),
+        Food(5, "cola", 1.0),
+        Food(6, "fanta", 1.0),
+        Food(7, "pepsi", 1.0),
+        Food(8, "juice", 2.2)
+    };
+    
+    speichern(dateiname, saveSpeisen);
+}
+
+// get food from list of foods based on order number
 Food getFoodFromOrderNr(int bestellNr, std::vector<Food>& speisen) {
     for(Food food : speisen) {
         if(food.getBestellnummer() == bestellNr) {
@@ -107,16 +111,11 @@ Food getFoodFromOrderNr(int bestellNr, std::vector<Food>& speisen) {
 }
 
 int main() {
-    //smap_test();
 
+    // initialize speisen karte
     createSpeisenKarte();
 
     std::vector<Food> speisen;
-    std::vector<Food> loadSpeisen;
-    laden(dateiname, loadSpeisen);
-
-    size_t mapSize = 8;
-    Map map(mapSize);
     try {
         laden("speisen.csv", speisen);
     }
@@ -124,10 +123,16 @@ int main() {
         std::cout << "No path to given file is found!" << std::endl;
         return -1;
     }
+
+    // initialize the map with size = 8
+    size_t mapSize = 8;
+    Map map(mapSize);
     
     char c;
     std::string orderKey;
     std::string exitChar = "e";
+
+    // run the program
     while(true) {
         std::cout << "#################################### OPTIONS ########################################" << std::endl;
         std::cout << "Press character to select option. Be carefuly of capslock!" << std::endl;
