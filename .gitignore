@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 *.exe
 Makefile
 .codelite
 *.mk
 *.txt
 */Debug
+=======
+*.exe
+*.csv
+>>>>>>> e73f53c (exercise 2)
