@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Praktikum_C
 Praktikum C++ TU Darmstadt
 =======
@@ -12,4 +11,3 @@ Praktikum C++ TU Darmstadt
 @Course __Praktikum C++ TU Darmstadt__
 
 @Author __Tung Doan__
->>>>>>> 25a244c (exercise 3)
