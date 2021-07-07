@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 *.exe
 Makefile
 .codelite
@@ -17,3 +18,9 @@ Makefile
 *.csv
 .vscode
 >>>>>>> 25a244c (exercise 3)
+=======
+*.exe
+*.out
+*.pdf
+.vscode
+>>>>>>> 6538bc1 (exercise 4)
