@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-*.exe
-Makefile
-.codelite
-*.mk
-*.txt
-*/Debug
-=======
-*.exe
-*.csv
->>>>>>> e73f53c (exercise 2)
-=======
 *.exe
 *.out
 *.txt
 *.csv
 .vscode
->>>>>>> 25a244c (exercise 3)
